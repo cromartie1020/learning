@@ -1,0 +1,9 @@
+*.pyc
+__init__.py
+env
+*.pyc
+.vscode
+allauth.json
+learn.tar.gz
+db.sqlite3
+
