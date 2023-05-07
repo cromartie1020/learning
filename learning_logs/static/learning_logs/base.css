@@ -1,0 +1,8 @@
+body {
+    background-color: antiquewhite;
+}
+
+table, th, td{
+    border-collapse: collapse;
+    padding-right: 30px;
+}
