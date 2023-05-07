@@ -7,10 +7,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config['SECRET_KEY']
 
 DEBUG = True
@@ -27,7 +23,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'learning_logs.apps.LearningLogsConfig'
+    'learning_logs.apps.LearningLogsConfig',
+    'users.apps.UsersConfig',
+    'api.apps.ApiConfig',
+    'logs.apps.LogsConfig', 
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -61,13 +61,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'learning_log.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'learn',
+        'USER': 'postgres',
+        'PASSWORD':config['PASSWORD'],
+        'HOST':'localhost',
+        'PORT':5432
+
     }
 }
 
@@ -96,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 

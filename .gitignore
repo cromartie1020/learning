@@ -1,3 +1,4 @@
+
 *.pyc
 __init__.py
 env
@@ -6,4 +7,7 @@ env
 allauth.json
 learn.tar.gz
 db.sqlite3
+learn.json
+learn.sql
+learn.pgsql
 

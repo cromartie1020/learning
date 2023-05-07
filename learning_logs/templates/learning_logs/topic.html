@@ -12,15 +12,23 @@
         <p>
             {{ entry.date_added|date:'M d, Y H:i' }}
         </p>
+        
         <p>
             {{ entry.text|linebreaks }}
         </p>
+        <p>
+          <a href="{% url 'edit_entry' entry.id %}">Edit Entry</a>
+        </p>
+
+
     </li>
+    
     {% empty %}
      <li>
      <p>No entries for the listed Topic.</p>
     {% endfor %}
      </li>
+      
   </ul>
-
+  <a href="{% url 'new_entry' topic.id %}">Add a New Entry.</a>
 {% endblock %}
